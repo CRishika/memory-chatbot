@@ -12,6 +12,14 @@ while True:
     if question.lower() == "exit":
         print("Good bye")
         break
+    elif question.lower() == "history":
+        print("\n----Chat history----")
+        for message in messages:
+            if message["role"] == "user":
+                print("You: ",message["content"])
+            elif message["role"] == "assistant":
+                print("Bot: ",message["content"])
+            print("--------------------\n")
     else:
         messages.append({
             "role":"user",
